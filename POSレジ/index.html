@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文化祭POSレジ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>文化祭 POSレジシステム</h1>
+
+    <div id="product-list">
+        <h2>商品一覧</h2>
+        <button onclick="addToCart('塩ポップコーン', 400)">塩ポップコーン (400円)</button>
+        <button onclick="addToCart('コンポタポップコーン', 400)">コンポタポップコーン (400円)</button>
+        <button onclick="addToCart('カレーポップコーン', 400)">カレーポップコーン (400円)</button>
+        <button onclick="addToCart('キャラメルポップコーン', 400)">キャラメルポップコーン (400円)</button>
+        <button onclick="addToCart('コーヒー', 200)">コーヒー (200円)</button>
+    </div>
+
+    <div id="cart">
+        <h2>カート</h2>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>商品名</th>
+                    <th>価格</th>
+                    <th>数量</th>
+                    <th>小計</th>
+                    <th>削除</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <h3>合計: <span id="total-price">0</span>円</h3>
+    </div>
+
+    <button onclick="exportToExcel()">Excelファイルをダウンロード</button>
+    <button onclick="exportToGoogleSheets()">スプレッドシートにエクスポート</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.7/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(() => console.log('Service Worker Registered'))
+            .catch(error => console.log('Service Worker Registration Failed:', error));
+        }
+      </script>
+</body>
+</html>
