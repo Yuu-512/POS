@@ -1,26 +1,55 @@
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-}
-
-h1, h2 {
-    color: #333;
-}
-
+/* 商品ボタンのスタイル */
 button {
     margin: 5px;
     padding: 10px;
     font-size: 16px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
 }
 
+/* テーブルのスタイル */
 table {
     width: 100%;
-    margin-top: 20px;
     border-collapse: collapse;
 }
 
 th, td {
-    border: 1px solid #ccc;
     padding: 10px;
+    border: 1px solid #ccc;
     text-align: center;
+}
+
+th {
+    background-color: #f9f9f9;
+}
+
+/* 合計金額のスタイル */
+#total-price {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* 削除ボタンのスタイル */
+.delete-btn {
+    background-color: #ff8080;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #ff4d4d;
+}
+
+/* 商品セクションのスタイル */
+#app h3 {
+    font-size: 24px;
+}
+
+#app {
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
 }
